@@ -10,9 +10,4 @@ CSD1102 Advance Computer Programming ปัณณธร คงสมหวัง
 
 3. อธิบายการแก้ปัญหา Default Method ชื่อชนกัน
 ในโปรเจกต์นี้ Interface `Flyable` และ `Drivable` มี default method ที่ชื่อว่า `status()` เหมือนกัน เมื่อคลาส `RescueRobot` นำทั้งคู่มา implement จะเกิด Error ทันทีเพราะคอมไพเลอร์สับสน
-วิธีแก้ปัญหา: Java บังคับให้คลาส `RescueRobot` ต้องประกาศ @Override เมธอด `status()` ขึ้นมาใหม่เองเพื่อตัดสินใจว่าจะทำอย่างไรกับเมธอดที่ชนกัน ในโจทย์นี้เราได้แก้ปัญหาโดยการเรียกใช้ผลลัพธ์จากทั้งสอง Interface มาต่อกัน ด้วยไวยากรณ์พิเศษคือ `InterfaceName.super.methodName()` ดังนี้:
-```java
-@Override
-public String status() {
-    return "ROBOT: " + Flyable.super.status() + " + " + Drivable.super.status();
-}
+วิธีแก้ปัญหา: Java บังคับให้คลาส `RescueRobot` ต้องประกาศ @Override เมธอด `status()` ขึ้นมาใหม่เองเพื่อตัดสินใจว่าจะทำอย่างไรกับเมธอดที่ชนกัน ในโจทย์นี้เราได้แก้ปัญหาโดยการเรียกใช้ผลลัพธ์จากทั้งสอง Interface มาต่อกัน ด้วยไวยากรณ์พิเศษคือ `InterfaceName.super.methodName()`
