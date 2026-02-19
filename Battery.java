@@ -1,5 +1,5 @@
 class Battery {
-    private double level; // %
+    private double level;
 
     public Battery(double level) {
         this.level = level;
